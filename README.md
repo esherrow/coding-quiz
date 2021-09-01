@@ -13,7 +13,7 @@ Create a timed coding quiz with local storage of high scores
 ## Website
 https://esherrow.github.io/coding-quiz/
 
-![Image of Main Display](https://esherrow.github.io/coding-quiz/CodingQuiz.JPG
+![Image of Main Display](https://esherrow.github.io/coding-quiz/CodingQuiz.JPG)
 
 
 ## Contribution
