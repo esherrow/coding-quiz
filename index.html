@@ -4,30 +4,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="./assets/.css"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/style.css">
     <title>Coding Quiz</title>
 </head>
 <body>
-    <header>
-        <h2 id ="time">Time Remaining: </h1>
-        <h2 id="hiScorer">Who's On Top</h1>
+    <header class="ms-2 mt-2">
+        <h3 id ="time">Time Remaining: </h1>
     </header>
-    <main>
+    <main class="mx-2">
         <div class="title">
-            <h1 id="title">Who's Ready To Code?</h1>
-            <button id="start">Start Game</button>
+            <h1 class="display-2 text-center" id="title">Who's Ready To Code?</h1>
+            <button type="button" class="btn btn-danger" id="start">Start Game</button>
         </div>
-        <div class="questionList">
-            <h1 id="question"></h1>
-            <button id="responseA"></button>
-            <button id="responseB"></button>
-            <button id="responseC"></button>
-            <button id="responseD"></button>
+        <div>
+            <br>
         </div>
-        <div class="score">
-            <div id="highScore">High Scores: </div>
+        <div id="questionList">
+            <h1 class="lead text-center" id="question"></h1>
+            <div class="d-grid gap-2 col-6 mx-auto">
+            <button type="button" class="btn btn-primary" id="responseA"></button>
+            <button type="button" class="btn btn-secondary" id="responseB"></button>
+            <button type="button" class="btn btn-primary" id="responseC"></button>
+            <button type="button" class="btn btn-secondary" id="responseD"></button>
+            </div>
+        </div>
+        <div>
+            <br>
+        </div>
+        <div class="score float-end">
+            <div id="highScore"><em>High Scores: </em></div>
             <input id="winnerName" placeholder="Name">
-            <submit id="submit">Add Your Name</submit>
+            <submit type="button" class="btn btn-success" id="submit">Add Your Initials</submit>
             <ol id="winnerList"></ol>
         </div>
     </main>

@@ -1,6 +1,6 @@
 var questions=[
     {
-        question:"What CSS declaration could you add to a 50%-width <div> to center it?",
+        question:"What CSS declaration could you add to a 50%-width < div > to center it?",
         responseA:{
             correct: false,
             text:"text-align: center"
@@ -41,7 +41,7 @@ var questions=[
         question:"Which statement correctly stores data into the Web Storage API?",
         responseA:{
             correct:true,
-            text:"ocalStorage.setItem('lunch', 'sandwich');"
+            text:"localStorage.setItem('lunch', 'sandwich');"
         },
         responseB:{
             correct:false,
@@ -101,11 +101,10 @@ var highscore = [];
 timeRemaining = 100;
 
 time = document.querySelector("#time");
-hiScorer =document.querySelector("#hiScorer");
 title =document.querySelector(".title");
 start =document.querySelector("#start");
 
-questionList =document.querySelector(".questionList");
+questionList =document.querySelector("#questionList");
 question=document.querySelector("#question");
 
 responseA=document.querySelector("#responseA");
@@ -128,9 +127,7 @@ function questionLayout(){
 
 function openingScene(){
     questionLayout();
-    // questionList.setAttribute("class", "ComingSoon");
-    // score.setAttribute("class","ComingSoon");
-    // title.removeAttribute("class","ComingSoon");
+    questionList.setAttribute("class", "inGame");
 
     start.addEventListener("click", function(evt){
         evt.stopPropagation();
@@ -139,8 +136,7 @@ function openingScene(){
 }
 
 function startGame(){
-    // questionList.removeAttribute("class","ComingSoon");
-    // title.setAttribute("class","ComingSoon");
+    questionList.removeAttribute("class","inGame");
 
     var timerInterval = setInterval(function(){
         timeRemaining--;
@@ -231,23 +227,18 @@ function printScore(highscore, winnerList){
         winnerList.appendChild(entry);
     }
 }
-function getHiScore(){
-    highscore = getPastScores(highscore);
-    printScore(highscore, winnerList);
-    hiScorer.addEventListener("click", function(){
-        winnerList.innerHTML = "";
-        openingScene();
-    })
-}
-
 
 function gameFinished(){
     highscore=getPastScores(highscore);
     time=timeRemaining;
 
+    questionList.setAttribute("class","inGame");
+    title.setAttribute("class","inGame");
+    winnerName.removeAttribute("class","inGame");
+
     submit.addEventListener("click", function(){
-        // winnerName.setAttribute("class","ComingSoon");
-        // submit.setAttribute("class","ComingSoon");
+        winnerName.setAttribute("class","inGame");
+        submit.setAttribute("class","inGame");
 
         var playerName = winnerName.value;
         var player={
